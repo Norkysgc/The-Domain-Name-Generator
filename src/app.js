@@ -15,27 +15,11 @@ function generadorDominio(parte1, parte2, parte3) {
         elemento.className = "alert alert-dark";
         lista.appendChild(elemento);
         elemento.appendChild(nuevoNombre);
-        let seleccionador = document.createElement("input");
-        seleccionador.className = "form-check-input";
-        seleccionador.setAttribute("type", "radio");
-        seleccionador.setAttribute("name", "opcion");
-        seleccionador.setAttribute("value", nuevoNombre.textContent);
-
-        elemento.appendChild(seleccionador);
       }
     }
   }
-  const selectores = document.querySelectorAll("input");
-  for (let i = 0; i < selectores.length; i++) {
-    selectores[i].addEventListener("input", function() {
-      if (selectores[i].checked) {
-        let elegido = selectores[i].value;
-        let titulo = document.querySelector("#titulo");
-        titulo.innerHTML = elegido;
-      }
-    });
-  }
 }
+
 document.querySelector("#boton").addEventListener("click", function() {
   generadorDominio(articulo, adjetivo, sustantivo);
   document.querySelector("#boton").style.display = "none";
